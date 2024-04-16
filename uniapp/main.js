@@ -3,6 +3,10 @@ import App from './App'
 // #ifndef VUE3
 import Vue from 'vue'
 import './uni.promisify.adaptor'
+import '@/static/css/global.css'
+import request from '@/utils/request.js'
+
+Vue.prototype.$request = request
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({
