@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/course/course",
+    "pages/me/me",
+    "pages/sports/sports",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/search/search"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "Fit",
+    "navigationBarBackgroundColor": "#7e6af8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "selectedColor": "#84bfe4",
+    "color": "#aab2b8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/icons/主页1.png",
+        "selectedIconPath": "static/icons/Fit.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "static/icons/课程1.png",
+        "selectedIconPath": "static/icons/课程2.png"
+      },
+      {
+        "pagePath": "pages/sports/sports",
+        "text": "运动",
+        "iconPath": "static/icons/闪电1.png",
+        "selectedIconPath": "static/icons/闪电2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "static/icons/我的1.png",
+        "selectedIconPath": "static/icons/我的2.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
