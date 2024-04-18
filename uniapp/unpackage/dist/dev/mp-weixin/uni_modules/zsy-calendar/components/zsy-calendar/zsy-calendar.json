@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "date-box": "/uni_modules/zsy-calendar/components/zsy-calendar/dateBox"
+  }
+}

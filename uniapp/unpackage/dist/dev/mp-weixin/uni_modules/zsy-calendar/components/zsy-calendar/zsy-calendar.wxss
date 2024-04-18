@@ -1,0 +1,90 @@
+
+.zsy_calendar {
+	width: 100%;
+	padding: 20rpx 0;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 20rpx;
+}
+
+/* 日历顶部信息 */
+.calendar_info {
+	display: flex;
+	align-items: center;
+	padding: 0 20rpx;
+}
+.calendar_info .title {
+	font-size: 34rpx;
+	font-weight: bold;
+	color: #2C2C2C;
+}
+.calendar_info .desc {
+	margin-left: 29rpx;
+	font-size: 28rpx;
+	color: #959595;
+}
+.calendar_info .backToToday {
+	margin-left: auto;
+	font-size: 24rpx;
+}
+
+/* 日历顶部信息 */
+
+/* 日历周数 */
+.calendar_week {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 26rpx;
+	color: #959595;
+	margin: 20rpx 0rpx;
+}
+.calendar_week .calendar_week__item {
+	width: calc(100% / 7);
+	text-align: center;
+}
+
+/* 日历周数 */
+
+/* 日历切换模式 */
+.calendar_toggle {
+	position: relative;
+	padding: 10rpx 0;
+	margin: 10rpx 20rpx 0;
+	display: flex;
+	justify-content: center;
+}
+.calendar_toggle .icon {
+	width: 30rpx;                
+	height: 30rpx;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAk1BMVEUAAAC/v7+/v7+/v7/AwMC/v7++vr6/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7/AwMC/v7/AwMC/v7+/v7+/v7+9vb2+vr6/v7+/v7+/v7+/v7+/v7/AwMC/v7+/v7/AwMC/v7++vr7Dw8O/v7/AwMDAwMDDw8O/v7+/v7/AwMDAwMC/v7/AwMC/v78rtI3rAAAAMHRSTlMAP/jOoOSBWCsm8miHdkof1L61XBnbq3INCJqUjDfs58SnekQyEd9iThTHr226U3zsTOvaAAADzUlEQVR42u3c2XLaQBAF0NYGWhAIsVjYbGY14KX//+vykLhCEqfNSJqFqnuebVXJRj1XPT0QAAAAAAAAAAAAAAAAAAAAAAAAAAAANHDavWT5yBvQHVtshhOfP0XnfEz3Z3AMI/7HtDuju3Ka839ETwndj2zC/xdldCe2JcsuC7oHHf6WvyH3zfkWZUWOe+TbBI6X4jPfauV09UpZwY6ctWQlHjmqYEWOBrAhKyMXPbO6iNwz5zqG5JoHrueJ3DLiul7JJVuur0/uiPna/RbhPTfjzFujz82syA0Ry6JgeRdFuGBJ8bAjolMWsOSR7HtjQZTP6Bf5Vh7ItlC8j5iuDF0uwnMWpB5dG0xYEJNNcjB5oT8tfBacyJ4uS0ZqP78kazzlEJWzYE2WxCz5oK88sSAkK/Y+C+b0tQsLcrJhVWuFqwK5PJhXsGAqfCCXLFiQaWsWDKU823cq05cN2qEZC1KzmT5kwSEhWY8FZzKoxwJ/Qd8JHSnCcjDpN+3lbciQLku6dIPxofYlTAWTrI2LbMmAxG9lbR6x5Uy/X7KgRzfbsCDdk26TOsFEPT8GpNmZBc+kpFS8lrEF/a3VuNYhjZ5ZUJxIUZLK9U+bJxYsE1L2wlYyfaf9PdpXtpDp5WCy1ZHaBqRBlyXvWh67QEOm91hy1PSGNqW2JUtdndtZJEeFdlUTfSV/xwa724HOjdkRG8v0b3o/xx8s8Qwt6GvdQ15+bGRBP1TaM1yxp784vGYV+otwbuRV7pTqnvM4GnoQPdbbWHk3lk+zhtFB5qXyllSb5honVpKDybmeqbZRzipQiEG6GwLFmGobmm7RRiwo9fyrS9JgwDr+dI8W+k59lvTaX9BXM9IjZ8lr61ccky5hy5k+Y0lC+ry1GiXezbRp1LvLk4RUbFObE0k+C9YqmX4XycFEs5hbyvSDwPKYRbed2e1qKM+YGNBpJdNf5G0LI6YtZPrQiZGqoHGmn7NgQsasWBDtGm5Rkjn7Zof/MnZmfHLBkrJJ3UvIqGP9TF8VTs2EzWtn+o5jU3plzSQcpxr2WPXlx8O4zqtUh6zwa23LhO4dixiwYFUpN01KsmVbZyf5IHQarHmo8dly8wjUo/qNHNw8GbwWbkTpGbH+7QxL1RA8ciGYfEW1KbVfOfotADF/6aISUbrkgnfFLsh44t6pup8+FBdpz3cimNy01X+ekaA/5d+iEbkj5D+lMcm8z9/wLw7Uqysd//o2wj59q4r7WT7ynDmb/SnpFb/uYp27cwS+nvH2uOnGBAAAAAAAAAAAAAAAAAAAAACg0Q8bLd4MmmtXGAAAAABJRU5ErkJggg==);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	-webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	transition: all .3s;
+}
+.icon.down {
+	-webkit-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+.calendar_toggle::before, .calendar_toggle::after {
+	width: calc(50% - 30rpx);
+	border-top: solid 2rpx #EAEAEA;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.calendar_toggle::before {
+	left: 0;
+}
+.calendar_toggle::after {
+	right: 0;
+}
+
+/* 日历切换模式 */
+
