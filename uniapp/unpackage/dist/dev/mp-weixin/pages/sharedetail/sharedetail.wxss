@@ -1,0 +1,69 @@
+
+.top{
+	position: fixed;
+	height: 80rpx;
+	width: 90%;
+	top: 0;
+	left: 5%;
+	bottom: 20rpx;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	background-color: white;
+}
+.imgcontainer{
+	height: 450rpx;
+	width: 90%;
+	margin-top: 110rpx;
+	margin-left: 5%;
+	/* border: 1px solid black; */
+}
+.scrollImg{
+	white-space: nowrap;
+	height: 100%;
+	width: 100%;
+}
+.scrollImg view:last-child {
+  margin-right: 0;
+}
+.eachImg{
+	display: inline-block;
+	margin-right: 20rpx;
+	height: 99%;
+	width: 48%;
+}
+.bottom{
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+	background-color: white;
+}
+.bottom > input{
+	height: 70rpx;
+	width: 420rpx;
+	border-radius: 60rpx;
+	background-color: #eaeaea;
+	padding-left: 40rpx;
+}
+.tag{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.Comments{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 20rpx;
+}
+.no{
+	background-color: #61d5a1;
+}
+.yes{
+	background-color: gray;
+}
+

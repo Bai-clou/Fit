@@ -1,0 +1,20 @@
+
+page{
+	min-height: 0;
+}
+.sixblock{
+	margin-top: 40rpx;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 100rpx;
+	grid-row-gap: 20rpx;
+}
+.eachone > view:nth-child(2){
+  color: rgb(165, 163, 163);
+}
+.eachone > view:nth-child(1){
+  font-size: 20px;
+  font-weight: bold;
+}
+

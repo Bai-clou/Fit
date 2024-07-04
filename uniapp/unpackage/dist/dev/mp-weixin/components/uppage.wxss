@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.slider.data-v-36b270b6 {
+  z-index: 999;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  background-color: #6c646f;
+  padding: 0 20rpx;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition-property: height;
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+}
+.slider .head_line.data-v-36b270b6 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .head_line .line.data-v-36b270b6 {
+  width: 74rpx;
+  height: 10rpx;
+  border-radius: 60rpx;
+  background-color: #919191;
+}
+.slider .slider-container.data-v-36b270b6 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider .partpage.data-v-36b270b6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.slider .eachblock.data-v-36b270b6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slider .eachblock > view.data-v-36b270b6:nth-child(1) {
+  color: white;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.slider .eachblock > view.data-v-36b270b6:nth-child(2) {
+  color: #d9d3d7;
+  font-size: 30rpx;
+}
+.slider .pageall.data-v-36b270b6 {
+  color: white;
+  margin-left: 10%;
+}
+.slider .eachone.data-v-36b270b6 {
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+}
+.slider .eachone > view.data-v-36b270b6:nth-child(1) {
+  font-size: 100rpx;
+  font-weight: bold;
+}
+.slider .eachone > view.data-v-36b270b6:nth-child(2) {
+  font-size: 40rpx;
+  color: #bebbc6;
+}
+.slider .fourblock.data-v-36b270b6 {
+  margin-top: 40rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 100rpx;
+  grid-row-gap: 20rpx;
+}
+

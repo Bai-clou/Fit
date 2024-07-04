@@ -67,6 +67,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* 日历轮播 */
 .date_box {
 	display: flex;
@@ -110,4 +121,17 @@
 	background-color: #FFFFFF;
 }
 /* 日历轮播 */
+.mark {
+  position: absolute;
+  bottom: 0;
+  right: -3px;
+  width: 50px;
+  height:10px;
+  background-color: white;
+  /* color: #7e6af8; */
+  height: 50px;
+  width: 50px;
+  /* border-radius: 50%;
+  /* background-image: url('../../../../static/icons/完成.png'); */
+}
 

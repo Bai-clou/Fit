@@ -1,0 +1,14 @@
+
+.tag{
+	height: 120rpx;
+	width: 400rpx;
+	background-color: #f7f7f7;
+	border-radius:40px;
+	position: absolute;
+	top: 15%;
+	left: 40rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+

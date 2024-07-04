@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ShareMapper">
+    <insert id="insert" parameterType="com.example.entity.Share" useGeneratedKeys="true">
+        insert into share
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userid != null">userid,</if>
+            <if test="title != null">title,</if>
+            <if test="bgimg != null">bgimg,</if>
+            <if test="likes != null">likes,</if>
+            <if test="imgs != null">imgs,</if>
+            <if test="content != null">content,</if>
+            <if test="sharetime != null">sharetime,</if>
+            <if test="comments != null">comments,</if>
+            <if test="avatar != null">avatar,</if>
+            <if test="name != null">name,</if>
+            <if test="subscriber != null">subscriber,</if>
+            <if test="address != null">address,</if>
+            <if test="likesuser != null">likesuser,</if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userid != null">#{userid},</if>
+            <if test="title != null">#{title},</if>
+            <if test="bgimg != null">#{bgimg},</if>
+            <if test="likes != null">#{likes},</if>
+            <if test="imgs != null">#{imgs},</if>
+            <if test="content != null">#{content},</if>
+            <if test="sharetime != null">#{sharetime},</if>
+            <if test="comments != null">#{comments},</if>
+            <if test="avatar != null">#{avatar},</if>
+            <if test="name != null">#{name},</if>
+            <if test="subscriber != null">#{subscriber},</if>
+            <if test="address != null">#{address},</if>
+            <if test="likesuser != null">#{likesuser},</if>
+        </trim>
+    </insert>
+
+    <select id="selectAll" parameterType="com.example.entity.Share" resultType="com.example.entity.Share">
+        select * from share
+        <where>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="title != null">
+                and title like concat('%', #{title}, '%')
+            </if>
+        </where>
+        order by id
+    </select>
+
+    <update id="updateById" parameterType="com.example.entity.Share">
+        update share
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="likes != null">
+                likes = #{likes},
+            </if>
+            <if test="imgs != null">
+                imgs = #{imgs},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="comments != null">
+                comments = #{comments},
+            </if>
+            <if test="subscriber != null">
+                subscriber = #{subscriber},
+            </if>
+            <if test="likesuser != null">
+                likesuser = #{likesuser},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from share where id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.userDataMapper">
+    <select id="selectAll" parameterType="com.example.entity.UserData" resultType="com.example.entity.UserData">
+        select * from userdata
+        <where>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+        </where>
+        order by userid
+    </select>
+    <update id="updateById" parameterType="com.example.entity.UserData">
+        update userdata
+        <set>
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="allconsum != null">
+                allconsum = #{allconsum},
+            </if>
+            <if test="weekconsum != null">
+                weekconsum = #{weekconsum},
+            </if>
+            <if test="wantcourse != null">
+                wantcourse = #{wantcourse},
+            </if>
+            <if test="alreadycourse != null">
+                alreadycourse = #{alreadycourse},
+            </if>
+            <if test="lastRecord != null">
+                lastRecord = #{lastRecord},
+            </if>
+            <if test="sportdate != null">
+                sportdate = #{sportdate},
+            </if>
+            <if test="height != null">
+                height = #{height},
+            </if>
+            <if test="bmi != null">
+                bmi = #{bmi},
+            </if>
+            <if test="rate != null">
+                rate = #{rate},
+            </if>
+            <if test="shares != null">
+                shares = #{shares},
+            </if>
+        </set>
+        where userid = #{userid}
+    </update>
+
+    <insert id="insert" parameterType="com.example.entity.UserData" useGeneratedKeys="true">
+        insert into userdata
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != null">userid,</if>
+            <if test="weight != null">weight,</if>
+            <if test="height != null">height,</if>
+            <if test="bmi != null">bmi,</if>
+            <if test="rate != null">rate,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userid != null">#{userid},</if>
+            <if test="weight != null">#{weight},</if>
+            <if test="height != null">#{height},</if>
+            <if test="bmi != null">#{bmi},</if>
+            <if test="rate != null">#{rate},</if>
+        </trim>
+    </insert>
+</mapper>

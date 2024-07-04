@@ -17,9 +17,13 @@
 				}"
 				@tap="chooseDate(dateInfo)"
 			>
-				<view class="calendar_date__number">{{ dateInfo.date }}</view>
+				<view v-if="isMarked(dateInfo.dateFormat)" class="mark">
+					<img style="height: 45px;width: 45px;margin-top: 5px;" src="../../../../static/icons/完成.png"/>
+				</view>
+				<view v-else class="calendar_date__number">{{ dateInfo.date }}</view>
 				<view class="calendar_date__isToday" v-if="dateInfo.isToday" :style="{ backgroundColor: dateActiveColor }"></view>
 				<view class="calendar_date__cricle"></view>
+				<!-- <view class="mark" v-if="isMarked(dateInfo.dateFormat)">已运动</view> -->
 			</view>
 		</view>
 	</view>
@@ -51,6 +55,10 @@
 			showActive: { // 是否显示选中高亮日期
 				type: Boolean,
 				default: false
+			},
+			markedDates: {
+				type: Array,
+				default: () => []
 			}
 		},
 		computed: {
@@ -61,6 +69,9 @@
 		methods: {
 			chooseDate(dateInfo) {
 				this.$emit('chooseDate', dateInfo)
+			},
+			isMarked(date) {
+				return this.markedDates.includes(date);
 			}
 		}
 	}
@@ -110,4 +121,17 @@
 		background-color: #FFFFFF;
 	}
 	/* 日历轮播 */
+	.mark {
+	  position: absolute;
+	  bottom: 0;
+	  right: -3px;
+	  width: 50px;
+	  height:10px;
+	  background-color: white;
+	  /* color: #7e6af8; */
+	  height: 50px;
+	  width: 50px;
+	  /* border-radius: 50%;
+	  /* background-image: url('../../../../static/icons/完成.png'); */
+	}
 </style>

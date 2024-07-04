@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.SportMapper">
+    <insert id="insert" parameterType="com.example.entity.Sport" useGeneratedKeys="true">
+        insert into sport
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userid != null">userid,</if>
+            <if test="type != null">type,</if>
+            <if test="alltime != null">alltime,</if>
+            <if test="disnum != null">disnum,</if>
+            <if test="stepnum != null">stepnum,</if>
+            <if test="typenum != null">typenum,</if>
+            <if test="consumption != null">consumption,</if>
+            <if test="latitude != null">latitude,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="markers != null">markers,</if>
+            <if test="polyline != null">polyline,</if>
+            <if test="stepfre != null">stepfre,</if>
+            <if test="date != null">date,</if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userid != null">#{userid},</if>
+            <if test="type != null">#{type},</if>
+            <if test="alltime != null">#{alltime},</if>
+            <if test="disnum != null">#{disnum},</if>
+            <if test="stepnum != null">#{stepnum},</if>
+            <if test="typenum != null">#{typenum},</if>
+            <if test="consumption != null">#{consumption},</if>
+            <if test="latitude != null">#{latitude},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="markers != null">#{markers},</if>
+            <if test="polyline != null">#{polyline},</if>
+            <if test="stepfre != null">#{stepfre},</if>
+            <if test="date != null">#{date},</if>
+        </trim>
+    </insert>
+
+    <select id="selectAll" parameterType="com.example.entity.Sport" resultType="com.example.entity.Sport">
+        select * from sport
+        <where>
+            <if test="userid != null">
+                and userid = #{userid}
+            </if>
+        </where>
+        order by id
+    </select>
+</mapper>

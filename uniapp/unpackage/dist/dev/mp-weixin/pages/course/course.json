@@ -1,5 +1,8 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "课程",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "backgroundColor": "#fff",
+  "usingComponents": {
+    "searchinput": "/components/searchinput"
+  }
 }

@@ -17,6 +17,9 @@
             <if test="info != null">info,</if>
             <if test="address != null">address,</if>
             <if test="type != null">type,</if>
+            <if test="attention != null">attention,</if>
+            <if test="fans != null">fans,</if>
+            <if test="praised != null">praised,</if>
 
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -31,6 +34,9 @@
             <if test="info != null">#{info},</if>
             <if test="address != null">#{address},</if>
             <if test="type != null">#{type},</if>
+            <if test="praised != null">#{praised},</if>
+            <if test="fans != null">#{fans},</if>
+            <if test="attention != null">#{attention},</if>
         </trim>
     </insert>
 
@@ -67,6 +73,15 @@
             <if test="type != null">
                 type = #{type},
             </if>
+            <if test="praised != null">
+                praised = #{praised},
+            </if>
+            <if test="fans != null">
+                fans = #{fans},
+            </if>
+            <if test="attention != null">
+                attention = #{attention},
+            </if>
         </set>
         where id = #{id}
     </update>
@@ -82,7 +97,7 @@
                 and id = #{id}
             </if>
             <if test="username != null">
-                and username = #{username}
+                and username like concat('%', #{username}, '%')
             </if>
             <if test="name != null">
                 and name like concat('%', #{name}, '%')

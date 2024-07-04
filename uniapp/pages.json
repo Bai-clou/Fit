@@ -3,15 +3,17 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
 			"path" : "pages/course/course",
 			"style" : 
 			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
+				"navigationBarTitleText" : "课程",
+				"enablePullDownRefresh" : false,
+				"backgroundColor": "#fff"
 			}
 		},
 		{
@@ -19,14 +21,14 @@
 			"style" : 
 			{
 				"navigationBarTitleText" : "我的",
-				"enablePullDownRefresh" : false
+				"enablePullDownRefresh" : true
 			}
 		},
 		{
 			"path" : "pages/sports/sports",
 			"style" : 
 			{
-				"navigationBarTitleText" : "",
+				"navigationBarTitleText" : "运动",
 				"enablePullDownRefresh" : false
 			}
 		},
@@ -50,6 +52,126 @@
 			"path" : "pages/search/search",
 			"style" : 
 			{
+				"navigationBarTitleText" : "搜索",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/walk/walk",
+			"style" : 
+			{
+				"navigationBarTitleText" : "行走",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/walking/walking",
+			"style" : 
+			{
+				"navigationBarTitleText" : "开始运动",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/sharedetail/sharedetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "详情",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/coursedetail/coursedetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "详情",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/userinfor/userinfor",
+			"style" : 
+			{
+				"navigationBarTitleText" : "个人信息",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/alreadycourse/alreadycourse",
+			"style" : 
+			{
+				"navigationBarTitleText" : "练过",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/wantcourse/wantcourse",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/completesport/completesport",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/allsports/allsports",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/bodydata/bodydata",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/upshare/upshare",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/attention/attention",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/selfindex/selfindex",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/searchdetail/searchdetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/upcourse/upcourse",
+			"style" : 
+			{
 				"navigationBarTitleText" : "",
 				"enablePullDownRefresh" : false
 			}
@@ -60,7 +182,7 @@
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "Fit",
 	    "navigationBarBackgroundColor": "#7e6af8",
-	    "backgroundColor": "#F8F8F8"
+	    "backgroundColor": "#7e6af8"
 	},
 	"tabBar": {
 	    "selectedColor": "#84bfe4",

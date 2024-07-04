@@ -1,0 +1,61 @@
+
+._div,
+scroll-view,
+swiper {
+	box-sizing: border-box;
+}
+.wuc-tab {
+    white-space: nowrap;
+}
+.wuc-tab-item {
+    height: 90rpx;
+    display: inline-block;
+    line-height: 90rpx;
+    margin: 0 10rpx;
+    padding: 0 20rpx;
+}
+.wuc-tab-item.cur {
+    border-bottom: 8rpx solid #55ffb8;
+}
+.wuc-tab.fixed {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1024;
+	box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+}
+.flex {
+    display: flex;
+}
+.text-center {
+    text-align: center;
+}
+.flex-sub {
+    flex: 1;
+}
+.text-blue{
+  color:#0081ff;
+}
+.text-white{
+  color:#ffffff;
+}
+.bg-white{
+    background-color: #fdfdfd;
+}
+.bg-blue{
+    background-color: #0081ff;
+}
+.bg-green{
+	background-color: #55ffb8;
+}
+.text-orange{
+  color: #f37b1d
+}
+.text-xl {
+	font-size: 36rpx;
+}
+.text-x2 {
+	font-size: 36rpx;
+	font-weight: bold;
+}
+

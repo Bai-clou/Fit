@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sportmap": "/components/sportmap"
+  }
+}

@@ -3,7 +3,7 @@
 	<view class="zsy_calendar">
 		<!-- 日历顶部信息 -->
 		<view class="calendar_info">
-			<text class="title">每日记录</text>
+			<text class="title">运动记录</text>
 			<text class="desc">
 				({{ getAssignDateInfo(false, 0) === getAssignDateInfo(true, 0) ? '' : getAssignDateInfo(false, 0) + '年' }}{{ getAssignDateInfo(false, 1) }}月)
 			</text>
@@ -34,6 +34,7 @@
 						:dateActiveColor="dateActiveColor"
 						:swiperMode="swiperMode"
 						:showActive="emitTimer === null"
+						:markedDates="markedDates"
 						@chooseDate="chooseDate"
 					/>
 				</swiper-item>
@@ -51,7 +52,7 @@
 	import { parseTime, deepClone } from './js/utils.js'
 	import DateBox from './dateBox.vue'
 	export default {
-		name: 'ZsyCalendar',
+		name: 'zsyCalendar',
 		components: {
 			DateBox
 		},
@@ -87,6 +88,10 @@
 			showArrowBtn: { // 是否显示左右切换按钮
 				type: Boolean,
 				default: true
+			},
+			 markedDates: {
+				type: Array,
+				default: () => []
 			}
 		},
 		data() {

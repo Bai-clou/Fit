@@ -1,66 +1,228 @@
 <template>
-	<view>
-		<swiper circular autoplay :interval="3000" :duration="500" indicator-dots style="height: 350rpx;"
-		  indicator-color="rgba(255, 255, 255, 0.6)" indicator-active-color="#3CB371">
-		  <swiper-item v-for="item in banners" :key="item.id">
-		    <navigator>
-		      <image :src="item.img" alt="" mode="widthFix" style="width: 100%;" />
-		    </navigator>
-		  </swiper-item>
-		</swiper>
-		<!-- 公告 -->
-		<view class="box">
-		  <uni-icons type="sound" size="20" style="position: relative; top: 5rpx;"></uni-icons>
-		  <text style="margin-left: 5rpx;">{{ notice }}</text>
-		</view>
-
+  <view>
+	<view style="position: fixed;z-index: 999;">
+		<searchinput :hotWords="hotWords" style="position: fixed;"></searchinput>
+		<wuc-tab style="position: absolute;top: 120rpx;left: 40rpx;"
+		:tab-list="tabList" :tabCur="TabCur" @change="tabChange" 
+		tab-class="text-center text-black bg-white" 
+		select-class="text-x2"></wuc-tab>
 	</view>
+    <view style="top: 120px; height: 100vh; width: 100%;position: fixed;">
+		<swiper :current="TabCur" class="swiper" duration="300" :circular="true" indicator-color="rgba(255,255,255,0)" indicator-active-color="rgba(255,255,255,0)" @change="swiperChange">
+			<swiper-item>
+				<scroll-view scroll-y=true style="height: 80vh;" class="bg-white padding text-center text-black">
+					<view style="display: flex;flex-wrap: wrap;flex-direction: row; justify-content: space-between;">
+						<view v-for="(item,index) in items" :key="index" class="item" @click="switchShare(item.id)">
+							<view style="width: 100%;height: 80%;">
+								<image :src="item.bgimg" style="width: 100%;height: 100%;border-radius: 5px;"></image>
+							</view>
+							<view style="width: 100%;height: 14%;text-align: left;margin-top: 10rpx;">
+								{{item.title}}
+							</view>
+							<view style="width: 100%;height: 8%;display: flex;
+							flex-direction: row;align-items: center; justify-content: space-between;">
+								<view style="display: flex;flex-direction: row;align-items: center;">
+									<image :src="item.avatar" style="height: 20px;width: 20px;border-radius: 50%;margin-right: 5rpx;"></image>
+									<view style="font-size: 12px;">{{item.name}}</view>
+								</view>
+								<view style="display: flex;flex-direction: row;align-items: center;margin-right: 24rpx;">
+									<image src="../../static/icons/点赞.png" style="height: 20px;width: 20px;margin-right: 5rpx;"></image>
+									<view style="font-size: 12px;color: gray;">{{item.likes}}</view>
+								</view>
+								
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y=true style="height: 80vh;" class="bg-white padding text-center text-black">
+					<view style="display: flex;flex-wrap: wrap;flex-direction: row; justify-content: space-between;">
+						<view v-for="(item,index) in subscribitems" :key="index" class="item" @click="switchShare(item.id)">
+							<view style="width: 100%;height: 80%;">
+								<image :src="item.bgimg" style="width: 100%;height: 100%;border-radius: 5px;"></image>
+							</view>
+							<view style="width: 100%;height: 14%;text-align: left;">
+								{{item.title}}
+							</view>
+							<view style="width: 100%;height: 8%;display: flex;
+							flex-direction: row;align-items: center; justify-content: space-between;">
+								<view style="display: flex;flex-direction: row;align-items: center;">
+									<image :src="item.avatar" style="height: 20px;width: 20px;border-radius: 50%;margin-right: 5rpx;"></image>
+									<view style="font-size: 12px;">{{item.name}}</view>
+								</view>
+								<view style="display: flex;flex-direction: row;align-items: center;margin-right: 24rpx;">
+									<image src="../../static/icons/点赞.png" style="height: 20px;width: 20px;margin-right: 5rpx;"></image>
+									<view style="font-size: 12px;color: gray;">{{item.likes}}</view>
+								</view>
+								
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+	  
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				banners: [],
-				noticeList: [],
-				notice: ''
-			}
-		},
-		onLoad() {
-			this.load();
-		},
-		methods: {
-			load() {
-			  // this.$request.get('/banner/selectAll').then(res => {
-			  //   this.banners = res.data || []
-			  // })
-			  
-			  // 获取公告数据
-			  this.$request.get('/notice/selectAll').then(res => {
-			    this.noticeList = res.data || []
-			    if (this.noticeList.length) {
-			      let i = 0
-			      this.notice = this.noticeList[i++].content
-			      if (this.noticeList.length > 1) {
-			        setInterval(() => {
-			          if (i === this.noticeList.length) {
-			            i = 0
-			          }
-			          this.notice = this.noticeList[i++].content
-			        }, 3000)
-			      }
-			    }
-			  })
-			}
+import searchinput from 'components/searchinput.vue';
+import WucTab from 'components/wuc-tab/wuc-tab.vue';
+import { obj2style } from 'utils/index';
+export default {
+	components:{
+		searchinput,
+		WucTab
+	},
+    data() {
+        return {
+			hotWords:[],
+            tabList: [{ name: '精选' }, { name: '订阅' }],
+            TabCur: 0,
+			items: [],
+			subscribitems:[],
+        };
+    },
+    computed: {
+        CustomBar() {
+            let style = {};
+            // #ifdef MP-WEIXIN
+            const systemInfo = uni.getSystemInfoSync();
+            let CustomBar =
+              systemInfo.platform === "android"
+                ? systemInfo.statusBarHeight + 50
+                : systemInfo.statusBarHeight + 45;
+            style['top'] = CustomBar + 'px';
+            // #endif
+            // #ifdef H5
+            style['top'] = 0 + 'px';
+            // #endif
+            return obj2style(style);
+        }
+    },
+	onLoad(){
+		this.$request.get('/hotsearch/selectAll').then(res => {
+			this.hotWords = this.hotWords.concat(res.data.slice(0, 3));
+		})
+		this.$request.get('/share/selectAll').then(res => {
+			console.log(res.data);
+			res.data.forEach(item => {
+			    item.subscriber = JSON.parse(item.subscriber);
+			});
+			this.items=res.data;
+			this.subscribitems = this.items.filter(item => item.subscriber.includes(uni.getStorageSync('xm-user').id));
+		})
+	},
+    methods: {
+        tabChange(index) {
+            this.TabCur = index;
+        },
+        swiperChange(e) {
+            let { current } = e.target;
+            this.TabCur = current;
+        },
+		switchShare(id){
+			let share = JSON.stringify(this.items.find(item => item.id === id))
+			uni.redirectTo({
+				url: '/pages/sharedetail/sharedetail?share='+share
+			});
 		}
-	}
+    },
+    onReady() {}
+};
 </script>
-
 <style>
-	.box {
-		background-color: #fff;
-		padding: 20rpx;
-		border-radius: 10rpx;
-		box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, .1);
-	}
+swiper {
+	box-sizing: border-box;
+}
+.swiper {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+}
+
+.cu-bar {
+	display: flex;
+	position: relative;
+	align-items: center;
+	min-height: 100upx;
+	justify-content: space-between;
+}
+
+.cu-bar .action {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+	max-width: 100%;
+  background-color: #ffffff;
+}
+
+.cu-bar .action:first-child {
+	margin-left: 30upx;
+	font-size: 30upx;
+}
+
+.solid,
+.solid-bottom {
+	position: relative;
+}
+
+.solid::after,
+.solid-bottom::after{
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	transform: scale(0.5);
+	transform-origin: 0 0;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+.solid::after {
+	border: 1upx solid rgba(0, 0, 0, 0.1);
+}
+
+.solid-bottom::after {
+	border-bottom: 1upx solid rgba(0, 0, 0, 0.1);
+}
+
+.text-orange{
+  color:#f37b1d
+}
+.text-black{
+  color:#333333;
+}
+.bg-white{
+    background-color: #ffffff;
+}
+
+.padding {
+	padding: 30upx;
+}
+
+.margin {
+	margin: 30upx;
+}
+
+.margin-top {
+	margin-top: 30upx;
+}
+.text-center {
+    text-align: center;
+}
+.item{
+	/* border: 1px solid black; */
+	width: 49%;
+	height: 525rpx;
+	margin-top: 20rpx;
+	margin-bottom: 25rpx;
+	border-radius: 5px;
+}
 </style>

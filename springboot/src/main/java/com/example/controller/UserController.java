@@ -3,8 +3,12 @@ package com.example.controller;
 import cn.hutool.core.util.ObjectUtil;
 import com.example.common.Result;
 import com.example.common.enums.ResultCodeEnum;
+import com.example.entity.Comment;
 import com.example.entity.User;
+import com.example.entity.UserData;
+import com.example.service.CommentService;
 import com.example.service.userService;
+import com.example.service.userDataService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +24,11 @@ public class UserController {
 
     @Resource
     private userService userService;
+    @Resource
+    private userDataService userDataService;
+
+    @Resource
+    private CommentService commentService;;
 
     @PostMapping("/add")
     public Result add(@RequestBody User user){
@@ -54,6 +63,30 @@ public class UserController {
         return Result.success(pageInfo);
     }
 
+    @PostMapping("/addUserData")
+    public Result add(@RequestBody UserData userData){
+        userDataService.add(userData);
+        return Result.success();
+    }
+
+    @GetMapping("/selectUserData")
+    public Result selectUserData(UserData userData){
+        List<UserData>  list  = userDataService.selectAll(userData);
+        return Result.success(list);
+    }
+
+    @GetMapping("/selectUserDataById/{userid}")
+    public Result selectUserData(@PathVariable Integer userid) {
+        UserData userData = userDataService.selectById(userid);
+        return Result.success(userData);
+    }
+
+    @PutMapping("/updateUserData")
+    public Result update(@RequestBody UserData userData) {
+        userDataService.updateById(userData);
+        return Result.success();
+    }
+
     @PutMapping("/update")
     public Result update(@RequestBody User business) {
         userService.updateById(business);
@@ -73,5 +106,20 @@ public class UserController {
     public Result deleteBatch(@RequestBody List<Integer> ids) {
         userService.deleteBatch(ids);
         return Result.success();
+    }
+
+    /*
+    评论
+     */
+    @PostMapping("/addComment")
+    public Result add(@RequestBody Comment comment){
+        commentService.add(comment);
+        return Result.success();
+    }
+
+    @GetMapping("/selectAllComment")
+    public Result selectAll(Comment comment){
+        List<Comment>  list  = commentService.selectAll(comment);
+        return Result.success(list);
     }
 }

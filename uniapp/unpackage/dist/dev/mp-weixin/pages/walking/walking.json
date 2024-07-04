@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "开始运动",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "timer": "/components/timer",
+    "sportmap": "/components/sportmap",
+    "uppage": "/components/uppage"
+  }
+}

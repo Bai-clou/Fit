@@ -34,13 +34,17 @@ page {
 	margin-top: 20rpx;
 	margin-left: 20rpx;
 }
-.calendar_container {
-	/* min-height: calc(100vh - var(--window-top)); */
-	background-color: #ffffff;
-	padding: 30rpx;
-	box-sizing: border-box;
-	border-radius: 20px;
-	margin: 20rpx;
+.calendar-content{
+	width: 90%;
+	margin: 40rpx 5%;
+	border-radius: 10px;
 }
-
+.card{
+	width: 90%;
+	height: 150rpx;
+	margin: 20rpx 5%; 
+	background-color: white;
+	border-radius: 10px;
+	display: flex;
+}
 

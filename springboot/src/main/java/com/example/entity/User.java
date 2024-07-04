@@ -15,6 +15,9 @@ public class User extends Account {
     private String info;
     private String address;
     private String type;
+    private String attention;
+    private String fans;
+    private String praised;
 
     public Integer getId() {
         return id;
@@ -101,6 +104,27 @@ public class User extends Account {
     public void setType(String type) {
         this.type = type;
     }
+    public String getPraised() {
+        return praised;
+    }
 
+    public void setPraised(String praised) {
+        this.praised = praised;
+    }
+    public String getFans() {
+        return fans;
+    }
+
+    public void setFans(String fans) {
+        this.fans = fans;
+    }
+
+    public String getAttention() {
+        return attention;
+    }
+
+    public void setAttention(String attention) {
+        this.attention = attention;
+    }
 
 }

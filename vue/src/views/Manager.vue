@@ -38,12 +38,12 @@
             <i class="el-icon-s-home"></i>
             <span slot="title">系统首页</span>
           </el-menu-item>
-          <el-submenu index="info">
-            <template slot="title">
-              <i class="el-icon-menu"></i><span>信息管理</span>
-            </template>
-            <el-menu-item index="/notice">公告信息</el-menu-item>
-          </el-submenu>
+<!--          <el-submenu index="info">-->
+<!--            <template slot="title">-->
+<!--              <i class="el-icon-menu"></i><span>信息管理</span>-->
+<!--            </template>-->
+<!--            <el-menu-item index="/notice">公告信息</el-menu-item>-->
+<!--          </el-submenu>-->
 
           <el-submenu index="user">
             <template slot="title">
@@ -52,6 +52,14 @@
             <el-menu-item index="/admin">管理员信息</el-menu-item>
             <el-menu-item index="/user">用户信息</el-menu-item>
           </el-submenu>
+          <el-menu-item index="/course">
+            <i class="el-icon-s-order"></i>
+            <span slot="title">课程管理</span>
+          </el-menu-item>
+          <el-menu-item index="/share">
+            <i class="el-icon-s-comment"></i>
+            <span slot="title">帖子管理</span>
+          </el-menu-item>
         </el-menu>
       </div>
 

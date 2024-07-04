@@ -1,6 +1,6 @@
 const apiConfig = {
 	dev: {
-		baseUrl: 'http://localhost:9090'
+		baseUrl: 'http://192.168.43.183:9090'
 	},
 	prod: {
 		baseUrl: 'http://:9090'

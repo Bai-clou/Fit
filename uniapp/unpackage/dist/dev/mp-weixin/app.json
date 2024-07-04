@@ -6,14 +6,29 @@
     "pages/sports/sports",
     "pages/login/login",
     "pages/register/register",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/walk/walk",
+    "pages/walking/walking",
+    "pages/sharedetail/sharedetail",
+    "pages/coursedetail/coursedetail",
+    "pages/userinfor/userinfor",
+    "pages/alreadycourse/alreadycourse",
+    "pages/wantcourse/wantcourse",
+    "pages/completesport/completesport",
+    "pages/allsports/allsports",
+    "pages/bodydata/bodydata",
+    "pages/upshare/upshare",
+    "pages/attention/attention",
+    "pages/selfindex/selfindex",
+    "pages/searchdetail/searchdetail",
+    "pages/upcourse/upcourse"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "Fit",
     "navigationBarBackgroundColor": "#7e6af8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#7e6af8"
   },
   "tabBar": {
     "selectedColor": "#84bfe4",
@@ -45,5 +60,17 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    },
+    "scope.userFuzzyLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ],
   "usingComponents": {}
 }

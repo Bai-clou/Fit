@@ -4,7 +4,7 @@
 		<view class="dSLComVueTop">
 			<view class="dSLComVueTopLeft">
 				<image src="/static/icons/search.png" class="dSLComVueTopLeftImg" style="width: 30rpx;height: 30rpx;flex: none;"></image>
-				<input  class="dSLComVueTopLeftInput" v-model="search_input" type="text" focus="true" :placeholder="placeholder"/>
+				<input  class="dSLComVueTopLeftInput" v-model="search_input" type="text" focus="true" :placeholder="placeholder" @confirm="onClickInput"/>
 				<view class="dSLComVueTopLeftDel" @click="onClickDel">
 					<image src="/static/icons/del.png" class="dSLComVueTopLeftDelImg" style="width: 35rpx;height: 35rpx;flex: none;" ></image>
 				</view>
@@ -38,7 +38,7 @@
 			
 			<view class="dSLComVueLog" v-if="search_list_hot.length>0 && is_hot_show">
 				<text class="dSLComVueLogBox mytext" v-for="(item,index) in search_list_hot" :key="index" @click="onClickInputValue(item)">
-					{{item?item:'无'}}
+					{{item?item.content:'无'}}
 				</text>
 			</view>
 		</view>
@@ -127,16 +127,18 @@
 			cancel(){
 				uni.navigateBack()
 			},
-			onClickInput(){
+			onClickInput(e){
+				if (!e.detail.value) {
+					return false;
+				}
+				this.search_input=e.detail.value.toLowerCase()
 				this.saveKeyword()
 			},
 			onClickInputValue(search_input) {
 				if (!search_input) {
 					return false;
 				}
-				
-				this.search_input = search_input.toLowerCase()
-				
+				search_input.content===undefined?this.search_input = search_input.toLowerCase():this.search_input=search_input.content.toLowerCase()
 				this.saveKeyword()
 			},
 			_init_search() {

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "搜索",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "d-search-log": "/uni_modules/d-search-log/components/d-search-log/d-search-log"

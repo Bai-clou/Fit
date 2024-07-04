@@ -1,0 +1,1 @@
+<block wx:if="{{countdownVisible}}"><view class="countdown-container"><view class="countdown">{{countdown}}</view></view></block>

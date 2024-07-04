@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "行走",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "wuc-tab": "/components/wuc-tab/wuc-tab"
+  }
+}

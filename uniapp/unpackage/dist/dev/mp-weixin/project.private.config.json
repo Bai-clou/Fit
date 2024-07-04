@@ -2,11 +2,96 @@
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "projectname": "uniapp",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   },
   "condition": {
     "miniprogram": {
       "list": [
+        {
+          "name": "pages/upcourse/upcourse",
+          "pathName": "pages/upcourse/upcourse",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/searchdetail/searchdetail",
+          "pathName": "pages/searchdetail/searchdetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/selfindex/selfindex",
+          "pathName": "pages/selfindex/selfindex",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/attention/attention",
+          "pathName": "pages/attention/attention",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/upshare/upshare",
+          "pathName": "pages/upshare/upshare",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/allsports/allsports",
+          "pathName": "pages/allsports/allsports",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/completesport/completesport",
+          "pathName": "pages/completesport/completesport",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/alreadycourse/alreadycourse",
+          "pathName": "pages/alreadycourse/alreadycourse",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/coursedetail/coursedetail",
+          "pathName": "pages/coursedetail/coursedetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/sharedetail/sharedetail",
+          "pathName": "pages/sharedetail/sharedetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/walking/walking",
+          "pathName": "pages/walking/walking",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/walk/walk",
+          "pathName": "pages/walk/walk",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
         {
           "name": "pages/course/course",
           "pathName": "pages/course/course",

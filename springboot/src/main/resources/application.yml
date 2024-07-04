@@ -1,5 +1,6 @@
 server:
   port: 9090
+  address: 192.168.43.183
 
 # 数据库配置
 spring:
@@ -28,4 +29,4 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
 
-ip: localhost
+#ip: 10.21.56.198

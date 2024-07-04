@@ -36,7 +36,6 @@ public class userService {
     }
 
     public void updateById(User user) {
-        // 先根据id查询商家是否存在，商家不存在那就返回错误信息
         User dbUser1 = selectById(user.getId());
         if (ObjectUtil.isEmpty(dbUser1)) {
             throw new CustomException(ResultCodeEnum.USER_NOT_EXIST_ERROR);

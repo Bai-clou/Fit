@@ -1,0 +1,27 @@
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+  width: 90%;
+  box-sizing: border-box;
+}
+.button-group {
+  text-align: center;
+  margin-top: 20px;
+}
+.video-container {
+  position: relative;
+  width: 100%;
+}
+.video-player {
+  width: 100%;
+}
+.close-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.uni-forms-item__label{
+	padding: 0 7px 0 0 !important;
+}
+

@@ -38,9 +38,9 @@
         onLoad(e) {
 			console.log(e)
 			this.input_text=e.searchword
-            this.search_list_hot = [
-                '手机','电脑','河南老君山','三亚一游','北京环球影城','杭州西湖','保定驴肉火烧','保定狼牙山玻璃栈道'
-            ]
+			this.$request.get('/hotsearch/selectAll').then(res => {
+				this.search_list_hot = res.data
+			})
         },
         methods: {
             onClickDelAll() {
@@ -48,6 +48,9 @@
             },
             onSearchName(e) {
                 console.log('[父级接收事件]：点击搜索:'+e)
+				uni.navigateTo({
+					url: '/pages/searchdetail/searchdetail?value='+e
+				});
             }
         }
     }
@@ -58,21 +61,5 @@
     .my-theme-bg {
         background: linear-gradient(117deg,#60DF9D,#31CB7B);
         color:#fff;
-        /* background: linear-gradient(117deg,#23C0F7,#ff661e); */
-        /* background: linear-gradient(90deg, #FFAA57, #23C0F7); */
-        /* background: linear-gradient(90deg, #F37749, #FFAA57); */
-        /* #FFAA57 */
-        /* background-image: linear-gradient(45deg, #39b54a, #8dc63f); */
-        /* color: #ffffff; */
-        /* background-color: #f37b1d; */
-        /* color: #ffffff; */
-        /* background-color: #ffffff; */
-        /* color: #666666; */
-        /* linear-gradient(-27deg, #33CB80, #28D0AF) */
-        /* background-image: line=ar-gradient(-27deg,#33CB80,#28D0AF); */
-        /* color: #ffffff; */
-        /* background-image: line=ar-gradient(-27deg,#fff,#fff); */
-        /* background-image: line=ar-gradient(-27deg,#23C0F7,#23C0F7); */
-        /* color: #000; */
     }
 </style>

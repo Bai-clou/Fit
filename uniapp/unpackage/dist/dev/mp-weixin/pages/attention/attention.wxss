@@ -1,0 +1,48 @@
+
+page{
+	background-color: white;
+}
+.swiper {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+}
+.item{
+	width: 90%;
+	height: 100rpx;
+	margin: 10px 5%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.yes{
+	width: 150rpx;
+	height: 50rpx;
+	border-radius: 50rpx;
+	background-color: white;
+	border: 1rpx solid #07b46c;
+	text-align: center;
+	line-height: 50rpx;
+}
+.no{
+	width: 150rpx;
+	height: 50rpx;
+	border-radius: 50rpx;
+	background-color: #07b46c;
+	color: white;
+	text-align: center;
+	line-height: 50rpx;
+}
+.text-black{
+  color:#333333;
+}
+.bg-white{
+    background-color: #ffffff;
+}
+.padding {
+	padding: 30rpx;
+}
+.text-center {
+    text-align: center;
+}
+

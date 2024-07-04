@@ -26,7 +26,7 @@ public class FileController {
     @Value("${server.port:9090}")
     private String port;
 
-    @Value("${ip:localhost}")
+    @Value("${ip:192.168.43.183}")
     private String ip;
 
     /**

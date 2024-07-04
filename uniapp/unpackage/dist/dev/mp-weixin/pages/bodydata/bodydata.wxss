@@ -1,0 +1,12 @@
+
+.box{
+	padding: 20rpx; 
+	margin: 80rpx 0; 
+	background-color: #fff; 
+	box-shadow: 0 2rpx 10rpx rgba(0,0,0,.1); 
+	border-radius: 10rpx;
+}
+.uni-forms-item__label{
+	padding: 0 10px 0 0 !important;
+}
+
